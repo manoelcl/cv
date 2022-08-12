@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manoel Castro Lois CV 2022</title>
+    <style>
+      :root {
+        --border-size: 2px;
+        --main-color: #4571cc;
+        --title-spacing: 0.15rem;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      ul,
+      ol {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      html {
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgb(53, 53, 53);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.4rem;
+        print-color-adjust: exact !important;
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+      }
+
+      header {
+        display: grid;
+        grid-template-areas:
+          "title position"
+          "contact contact"
+          "links links";
+        align-items: center;
+        width: 100%;
+        margin: 1rem auto;
+
+        padding-bottom: var(--padding-normal);
+      }
+
+      header > h1,
+      header > h2 {
+        text-transform: uppercase;
+      }
+
+      header h1 {
+        line-height: 2rem;
+      }
+
+      header h2 {
+        text-align: right;
+        margin: 0;
+      }
+
+      header > :nth-child(3) {
+        grid-area: contact;
+        display: flex;
+        margin-top: 1rem;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      header > :nth-child(4) {
+        grid-area: links;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: center;
+        gap: 1rem;
+      }
+
+      header > :nth-child(4) * > :first-child {
+        color: var(--main-color);
+        font-weight: bold;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--bg-color);
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+      }
+
+      section {
+        box-shadow: 0.25rem 0.25rem 1rem #4572cc77;
+        border-radius: 2rem;
+        background-color: var(bg-color-light);
+        padding: 1rem;
+      }
+
+      main {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+          "profile profile education"
+          "experience experience education"
+          "skills skills languages"
+          "skills skills  hobbies";
+        gap: 1rem;
+        flex-grow: 1;
+        background-color: var(--color-inner);
+      }
+
+      .links ul {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .languages {
+        grid-area: languages;
+      }
+
+      .skills {
+        grid-area: skills;
+        font-weight: bold;
+      }
+
+      .skills ul {
+        display: flex;
+        max-height: 300px;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: stretch;
+        gap: 1rem;
+      }
+
+      .skills li {
+        margin-bottom: 4px;
+      }
+
+      .skills li:after {
+        content: "";
+        border-radius: 1rem;
+        margin-top: 0.5rem;
+        box-shadow: 0.25rem 0.25rem 1rem rgba(0, 17, 255, 0.281);
+        display: block;
+        width: 150px;
+        height: 15px;
+        background-color: aliceblue;
+        print-color-adjust: exact !important;
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+      }
+
+      .skills li.high:after {
+        background-image: linear-gradient(
+          90deg,
+          var(--main-color) 80%,
+          transparent 80%
+        );
+      }
+      .skills li.low:after {
+        background-image: linear-gradient(
+          90deg,
+          var(--main-color) 20%,
+          transparent 20%
+        );
+      }
+      .skills li.medium:after {
+        background-image: linear-gradient(
+          90deg,
+          var(--main-color) 50%,
+          transparent 50%
+        );
+      }
+      .skills li.maximum:after {
+        background-image: linear-gradient(
+          90deg,
+          var(--main-color) 100%,
+          transparent 100%
+        );
+      }
+
+      .hobbies {
+        grid-area: hobbies;
+      }
+
+      .links {
+        grid-area: links;
+      }
+      .experience {
+        grid-area: experience;
+      }
+      .education {
+        grid-area: education;
+      }
+      ol {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      ol > li {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      ol > li > :nth-child(3),
+      ol > li > :first-child {
+        font-size: 0.85rem;
+      }
+      ol > li > :nth-child(2) {
+        font-weight: bold;
+        color: var(--main-color);
+      }
+
+      ol > li ul {
+        list-style-type: circle;
+        padding: 0.25rem 2rem;
+      }
+
+      .languages ul {
+        list-style: none;
+      }
+      .profile {
+        grid-area: profile;
+        text-align: justify;
+      }
+
+      .languages ul li {
+        display: grid;
+        grid-template-columns: auto 4rem auto;
+        align-items: center;
+        gap: 1rem;
+      }
+      .languages ul li :nth-child(2) {
+        font-weight: bold;
+      }
+
+      .education li:not(:last-child):after {
+        content: "";
+        font-size: large;
+        height: 3rem;
+        border-left: 2px solid var(--main-color);
+      }
+
+      h1 {
+        font-weight: normal;
+        color: var(--main-color);
+      }
+      header h1 a {
+        color: var(--main-color);
+      }
+      h2 {
+        letter-spacing: var(--title-spacing);
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        color: var(--main-color);
+      }
+
+      a {
+        text-decoration: none;
+        color: rgb(53, 53, 53);
+      }
+      header li {
+        display: flex;
+        flex-direction: column;
+      }
+
+      li a:nth-of-type(2) {
+        display: none;
+        font-size: 0.9rem;
+      }
+
+      button {
+        padding: 0.25rem;
+        border-radius: 0.5rem;
+        border: 1px solid white;
+        background-color: var(--main-color);
+        color: white;
+        cursor: pointer;
+      }
+
+      footer {
+        margin-top: 1rem;
+      }
+
+      @media only screen and (max-width: 600px) {
+        main {
+          display: grid;
+          grid-template-columns: auto;
+          grid-template-rows: auto;
+          grid-template-areas: "profile" "education" "experience" "skills" "languages" "hobbies";
+        }
+
+        .skills ul {
+          height: fit-content;
+          flex-wrap: wrap;
+        }
+      }
+
+      @media only screen and (max-width: 450px) {
+        .skills ul {
+          max-height: initial;
+        }
+      }
+
+      @media print {
+        button {
+          display: none;
+        }
+        li a:nth-of-type(2) {
+          display: initial;
+          font-size: 0.8rem;
+        }
+
+        @page {
+          margin: 0;
+          size: 210mm 297mm;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>
+        <a href=""><strong>Manoel</strong> Castro Lois</a>
+      </h1>
+      <h2>Frontend developer</h2>
+      <ul class="contact">
+        <li><a href="mailto: manoelcl@gmail.com">manoelcl@gmail.com</a></li>
+        <li><a href="tel: +34 645587968">(+34) 645 587 968</a></li>
+      </ul>
+      <ul>
+        <li>
+          <a href="https://www.linkedin.com/in/manoelcl/">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/manoelcl/">
+            https://www.linkedin.com/in/manoelcl/
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/manoelcl">GitHub</a>
+          <a href="https://github.com/manoelcl">https://github.com/manoelcl</a>
+        </li>
+
+        <li>
+          <a href="https://www.artstation.com/mcastro">Artstation</a>
+          <a href="https://www.artstation.com/mcastro">
+            https://www.artstation.com/mcastro
+          </a>
+        </li>
+        <li>
+          <a href="https://maxscheler.itch.io/">Itch</a>
+          <a href="https://maxscheler.itch.io/">https://maxscheler.itch.io/</a>
+        </li>
+      </ul>
+    </header>
+    <main>
+      <section class="profile">
+        <h2>Perfil profesional</h2>
+        <p>
+          Desarrollador web junior con background de generalista 3D y
+          desarrollador de videojuegos. He trabajado para carteras como Inditex
+          o Estrella Galicia. Estoy acostumbrado a trabajar con deadlines
+          ajustadas y altamente motivado para introducirme en el mundo del
+          desarrollo web.
+        </p>
+      </section>
+
+      <section class="experience">
+        <h2>Experiencia laboral</h2>
+        <ol>
+          <li>
+            <p>Feb 2016 - Dic 2019</p>
+            <p>Generalista 3D</p>
+            <p>Neograf, A Coruña</p>
+            <ul>
+              <li>
+                Modelado 3D, texturizado y renderizado de escaparates,
+                mobiliario e interiores con Cinema 4D
+              </li>
+              <li>
+                Motion graphics para escaparatismo y video 360 con After Effects
+              </li>
+              <li>Realidad virtual para escaparatismo con Unreal Engine</li>
+            </ul>
+          </li>
+        </ol>
+      </section>
+
+      <section class="education">
+        <h2>Educación</h2>
+        <ol>
+          <li>
+            <p>Sep 2008 - Jul 2015</p>
+            <p>Licenciatura en filosofía</p>
+            <p>Santiago de Compostela</p>
+          </li>
+          <li>
+            <p>Sep 2013 - Sep 2015</p>
+            <p>Animación 3D, juegos y entornos interactivos</p>
+            <p>EIS, A Coruña</p>
+          </li>
+          <li>
+            <p>Ene 2022 - Jun 2022</p>
+            <p>Bootcamp desarrollo web fullstack</p>
+            <p>Hack A Boss, A Coruña</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="skills">
+        <h2>Competencias</h2>
+        <ul>
+          <li class="low">React.js</li>
+          <li class="low">Node.js</li>
+          <li class="low">MySQL</li>
+          <li class="medium">HTML/CSS/JS (Vanilla)</li>
+          <li class="medium">Git</li>
+          <li class="low">Cypress</li>
+          <li class="medium">Postman</li>
+          <li class="high">Unreal Engine 4</li>
+          <li class="medium">Three.js</li>
+        </ul>
+      </section>
+
+      <section class="languages">
+        <h2>Idiomas</h2>
+        <ul>
+          <li>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 60 30"
+              width="15"
+              height="10"
+            >
+              <clipPath id="s">
+                <path d="M0,0 v30 h60 v-30 z" />
+              </clipPath>
+              <clipPath id="t">
+                <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z" />
+              </clipPath>
+              <g clip-path="url(#s)">
+                <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
+                <path
+                  d="M0,0 L60,30 M60,0 L0,30"
+                  stroke="#fff"
+                  stroke-width="6"
+                />
+                <path
+                  d="M0,0 L60,30 M60,0 L0,30"
+                  clip-path="url(#t)"
+                  stroke="#C8102E"
+                  stroke-width="4"
+                />
+                <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10" />
+                <path
+                  d="M30,0 v30 M0,15 h60"
+                  stroke="#C8102E"
+                  stroke-width="6"
+                />
+              </g>
+            </svg>
+            <p>Inglés</p>
+            <p>C1</p>
+          </li>
+          <li>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="15"
+              height="10"
+              viewBox="0 0 900 600"
+            >
+              <rect width="900" height="600" fill="#ED2939" />
+              <rect width="600" height="600" fill="#fff" />
+              <rect width="300" height="600" fill="#002395" />
+            </svg>
+            <p>Francés</p>
+            <p>B2</p>
+          </li>
+          <li>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 900 600"
+              width="15"
+              height="10"
+            >
+              <path fill="#FFF" d="M0 0h900v600H0z" />
+              <path
+                d="M 0,90.14 L 764.79,600 L 900,600 L 900,509.86 L 135.21,0 L 0,0 L 0,90.14z"
+                fill="#0099cc"
+              />
+            </svg>
+            <p>Gallego</p>
+            <p>Nativo</p>
+          </li>
+          <li>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="15"
+              height="10"
+              viewBox="0 0 750 500"
+            >
+              <rect width="750" height="500" fill="#c60b1e" />
+              <rect width="750" height="250" fill="#ffc400" y="125" />
+            </svg>
+            <p>Español</p>
+            <p>Nativo</p>
+          </li>
+        </ul>
+      </section>
+      <section class="hobbies">
+        <h2>Hobbies</h2>
+        <ul>
+          <li>Participar en game jams</li>
+          <li>Creative coding</li>
+          <li>Fotogrametría</li>
+          <li>Impresión 3D</li>
+        </ul>
+      </section>
+    </main>
+    <footer>
+      <p>
+        Manoel Castro Lois, 2022
+        <button onclick="window.print()">🖨️ or 💾</button>
+      </p>
+    </footer>
+  </body>
+</html>
