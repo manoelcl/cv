@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manoel Castro Lois CV 2022 EN</title>
+    <style>
+      :root {
+        --border-size: 2px;
+        --main-color: #4571cc;
+        --title-spacing: 0.15rem;
+        --shadow-color: #4572cc77;
+        --font-color: rgb(53, 53, 53);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      ul,
+      ol {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      html {
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--font-color);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.4rem;
+        print-color-adjust: exact !important;
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+      }
+
+      header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 1rem auto;
+        padding-bottom: var(--padding-normal);
+      }
+
+      header > h1,
+      header > h2 {
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+
+      header h1 {
+        line-height: 2rem;
+      }
+
+      header h2 {
+        text-align: right;
+        margin: 0;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--bg-color);
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+      }
+
+      section {
+        box-shadow: 0.25rem 0.25rem 1rem var(--shadow-color);
+        border-radius: 2rem;
+        background-color: var(bg-color-light);
+        padding: 1rem;
+      }
+
+      main {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        flex-grow: 1;
+        background-color: var(--color-inner);
+      }
+
+      .cv ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 1 rem;
+      }
+
+      .cv ul li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+      }
+      .cv ul li :nth-child(2) {
+        font-weight: bold;
+      }
+      .links ul {
+        align-items: center;
+      }
+      .links ul li {
+        font-weight: bold;
+        min-width: 200px;
+      }
+
+      h1 {
+        font-weight: normal;
+        color: var(--main-color);
+      }
+      header h1 a {
+        color: var(--main-color);
+      }
+      h2 {
+        letter-spacing: var(--title-spacing);
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        color: var(--main-color);
+      }
+
+      a {
+        text-decoration: none;
+        color: rgb(53, 53, 53);
+      }
+      header li {
+        display: flex;
+        flex-direction: column;
+      }
+
+      li a:nth-of-type(2) {
+        display: none;
+        font-size: 0.9rem;
+      }
+
+      button {
+        padding: 0.25rem;
+        border-radius: 0.5rem;
+        border: 1px solid white;
+        background-color: var(--main-color);
+        color: white;
+        cursor: pointer;
+      }
+
+      footer {
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>
+        <a href=""><strong>Manoel</strong> Castro Lois</a>
+      </h1>
+      <h2>Front-end developer</h2>
+    </header>
+    <main>
+      <section class="cv">
+        <h2>CV</h2>
+        <ul>
+          <li>
+            <a href="/CV_ManoelCastroLois_2022_en.html">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 60 30"
+                width="15"
+                height="10"
+              >
+                <clipPath id="s">
+                  <path d="M0,0 v30 h60 v-30 z" />
+                </clipPath>
+                <clipPath id="t">
+                  <path
+                    d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"
+                  />
+                </clipPath>
+                <g clip-path="url(#s)">
+                  <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
+                  <path
+                    d="M0,0 L60,30 M60,0 L0,30"
+                    stroke="#fff"
+                    stroke-width="6"
+                  />
+                  <path
+                    d="M0,0 L60,30 M60,0 L0,30"
+                    clip-path="url(#t)"
+                    stroke="#C8102E"
+                    stroke-width="4"
+                  />
+                  <path
+                    d="M30,0 v30 M0,15 h60"
+                    stroke="#fff"
+                    stroke-width="10"
+                  />
+                  <path
+                    d="M30,0 v30 M0,15 h60"
+                    stroke="#C8102E"
+                    stroke-width="6"
+                  />
+                </g>
+              </svg>
+              <p>English CV</p>
+            </a>
+          </li>
+
+          <li>
+            <a href="/CV_ManoelCastroLois_2022.html">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="15"
+                height="10"
+                viewBox="0 0 750 500"
+              >
+                <rect width="750" height="500" fill="#c60b1e" />
+                <rect width="750" height="250" fill="#ffc400" y="125" />
+              </svg>
+              <p>Spanish CV</p>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section class="links">
+        <h2>Links</h2>
+        <ul class="contact">
+          <li><a href="mailto: manoelcl@gmail.com">manoelcl@gmail.com</a></li>
+          <li><a href="tel: +34 645587968">(+34) 645 587 968</a></li>
+          <li>
+            <a href="https://www.linkedin.com/in/manoelcl/">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/manoelcl/">
+              https://www.linkedin.com/in/manoelcl/
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/manoelcl">GitHub</a>
+            <a href="https://github.com/manoelcl"
+              >https://github.com/manoelcl</a
+            >
+          </li>
+
+          <li>
+            <a href="https://www.artstation.com/mcastro">Artstation</a>
+            <a href="https://www.artstation.com/mcastro">
+              https://www.artstation.com/mcastro
+            </a>
+          </li>
+          <li>
+            <a href="https://maxscheler.itch.io/">Itch</a>
+            <a href="https://maxscheler.itch.io/"
+              >https://maxscheler.itch.io/</a
+            >
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer>
+      <p>Manoel Castro Lois, 2022</p>
+    </footer>
+  </body>
+</html>
